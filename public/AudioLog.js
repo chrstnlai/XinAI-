@@ -13,17 +13,17 @@ let audioContainer;
 
 
 async function createModel() {
-    const checkpointURL = URL + "model.json"; // model topology
-    const metadataURL = URL + "metadata.json"; // model metadata
+    const checkpointURL = URL + "model.json"; 
+    const metadataURL = URL + "metadata.json"; 
 
     recognizer = speechCommands.create(
-        "BROWSER_FFT", // fourier transform type, not useful to change
-        undefined, // speech commands vocabulary feature, not useful for your models
+        "BROWSER_FFT", 
+        undefined, 
         checkpointURL,
         metadataURL
     );
 
-    // check that model and metadata are loaded via HTTPS requests.
+   
     await recognizer.ensureModelLoaded();
 
     return recognizer;
@@ -53,11 +53,11 @@ async function startRecording() {
 
     mediaRecorder.onstop = () => {
         try {
-            // Save the recorded audio and create a URL
+            
             const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
             const audioUrl = window.URL.createObjectURL(audioBlob);
 
-            // Create a new audio player element and add it to the container
+            
             if (!audioContainer) {
                 audioContainer = document.getElementById('audio-container');
             }
@@ -66,12 +66,12 @@ async function startRecording() {
             audioElement.src = audioUrl;
             audioContainer.appendChild(audioElement);
 
-            // Clear the visualization
+            
             if (canvasCtx) {
                 canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
             }
 
-            // Reset audioChunks for the next recording
+            
             audioChunks = [];
         } catch (error) {
             console.error('Error creating audio URL:', error);
@@ -81,19 +81,18 @@ async function startRecording() {
     mediaRecorder.start();
     console.log('Recording started');
 
-    // Start visualizing audio
+   
     visualize();
 
-    // Start listening to the speech commands
-    const classLabels = recognizer.wordLabels(); // get class labels
+    
+    const classLabels = recognizer.wordLabels(); 
     const labelContainer = document.getElementById("label-container");
     for (let i = 0; i < classLabels.length; i++) {
         labelContainer.appendChild(document.createElement("div"));
     }
 
     recognizer.listen(result => {
-        const scores = result.scores; // probability of prediction for each class
-        // render the probability scores per class
+        const scores = result.scores; 
         let maxScore = -1;
         let maxIndex = -1;
         for (let i = 0; i < classLabels.length; i++) {
@@ -107,10 +106,10 @@ async function startRecording() {
         const classification = classLabels[maxIndex];
         document.getElementById('classification').innerText = `Classification: ${classification}`;
     }, {
-        includeSpectrogram: true, // in case listen should return result.spectrogram
+        includeSpectrogram: true, /
         probabilityThreshold: 0.75,
         invokeCallbackOnNoiseAndUnknown: true,
-        overlapFactor: 0.50 // probably want between 0.5 and 0.75. More info in README
+        overlapFactor: 0.50 
     });
 }
 
@@ -119,12 +118,12 @@ function stopRecording() {
         mediaRecorder.stop();
         console.log('Recording stopped');
 
-        // Stop listening to the speech commands
+        
         if (recognizer) {
             recognizer.stopListening();
         }
 
-        // Stop visualizing audio and clear the canvas
+        
         if (animationFrameId) {
             cancelAnimationFrame(animationFrameId);
         }
@@ -154,13 +153,12 @@ function visualize() {
         x += barWidth + 1;
     }
 
-    // Store the animation frame ID
+    
     animationFrameId = requestAnimationFrame(visualize);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    window.startRecording = startRecording; // Expose the startRecording function to the global scope
-    window.stopRecording = stopRecording; // Expose the stopRecording function to the global scope
+    window.startRecording = startRecording; /
+    window.stopRecording = stopRecording; 
 });
 
-//test

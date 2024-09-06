@@ -11,6 +11,7 @@ let canvasCtx;
 let animationFrameId;
 let audioContainer;
 
+
 async function createModel() {
     const checkpointURL = URL + "model.json"; // model topology
     const metadataURL = URL + "metadata.json"; // model metadata

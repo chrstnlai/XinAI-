@@ -162,3 +162,5 @@ document.addEventListener("DOMContentLoaded", function () {
     window.startRecording = startRecording; // Expose the startRecording function to the global scope
     window.stopRecording = stopRecording; // Expose the stopRecording function to the global scope
 });
+
+//test

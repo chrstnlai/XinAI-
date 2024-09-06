@@ -1,0 +1,44 @@
+.center{
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+    height: 50vh;
+}
+
+
+.anim-circle {
+  color: transparent;
+  position: absolute;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 223, 0, 0.3);
+  margin:110px;
+  left: 43%; 
+  animation: breathe 7s linear infinite;
+}
+
+@keyframes breathe {
+0% {
+        box-shadow: 0 0 0 15px rgba(255, 223, 0, 0.3), 0 0 0 30px rgba(255, 223, 0, 0.3), 0 0 0 45px rgba(255, 223, 0, 0.3), 0 0 0 60px rgba(255, 223, 0, 0.3), 0 0 0 75px rgba(255, 223, 0, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 0 25px rgba(255, 215, 0, 0.3), 0 0 0 50px rgba(255, 215, 0, 0.3), 0 0 0 75px rgba(255, 215, 0, 0.3), 0 0 0 100px rgba(255, 215, 0, 0.3), 0 0 0 125px rgba(255, 215, 0, 0.3); 0.3);
+ }
+ 100% {
+        box-shadow: 0 0 0 15px rgba(255, 223, 0, 0.3), 0 0 0 30px rgba(255, 223, 0, 0.3), 0 0 0 45px rgba(255, 223, 0, 0.3), 0 0 0 60px rgba(255, 223, 0, 0.3), 0 0 0 75px rgba(255, 223, 0, 0.3);
+ }
+
+.continue button{
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+    height: 50vh;
+  margin: 20px;
+}

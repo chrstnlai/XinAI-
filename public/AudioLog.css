@@ -1,0 +1,83 @@
+/* Basic styling for the canvas and buttons */
+#visualizer {
+    border: 1px solid #000;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+}
+
+button {
+    margin-right: 10px;
+}
+
+
+html {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+/* TODO: Edit the properties below to customize your website! */
+body {
+  background-color: #ffbb00;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 20pt;
+  margin: 20px 50px 30px 50px;
+}
+
+p {
+  width: 80%;
+  text-align: left;
+  margin: 10px 50px;
+}
+
+.bubble {
+  background-color: white;
+  border-radius: 10px;
+
+  width: 80%;
+  padding: 5px 0;
+  margin: 50px 0 10px 0;
+}
+
+/* Edit me to change the appearance of the button! */
+button {
+  font-size: 12pt;
+
+  background-color: #fbca41;
+  border: none;
+  /* for rounded corners */
+  border-radius: 5px;
+
+  width: 150px;
+  height: 50px;
+  margin: 20px 50px;
+}
+
+button:hover {
+  background-color: #e7e7e9;
+  cursor: pointer;
+}
+
+/* The camera */
+.camera {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* The labels */
+#label-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 12pt;
+
+  margin: 25px;
+}

@@ -1,0 +1,88 @@
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding-top: 110px; 
+  position: relative;
+}
+
+.float-container {
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: space-between; 
+  width: 100%; 
+  max-width: 1200px; 
+  padding: 20px; 
+}
+
+.float-child {
+  flex: 1; 
+  padding: 10px; 
+}
+
+.introtext {
+  font-family: "Public Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.introtext h1 {
+  font-size: 3.5rem; 
+  margin: 1;
+}
+
+.introtext p {
+  font-size: 2rem; 
+  margin: 1;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center; 
+}
+
+.image-container img {
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+}
+
+.begin {
+  margin-top: 20px; 
+}
+
+button {
+  font-family: "Public Sans", sans-serif;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #fdf3af;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffe561;
+}
+
+
+.anim_gradient {
+  background: linear-gradient(45deg, #ffbd2e 0%, #fdea8b 100%);
+  background-size: 400% 400%;
+  width: 100%;
+  height: 100vh; 
+  position: absolute; 
+  top: 0;
+  left: 0;
+  z-index: -1; 
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
